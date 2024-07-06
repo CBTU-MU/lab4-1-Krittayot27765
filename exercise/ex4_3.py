@@ -5,7 +5,12 @@ def homework():
 
     from sklearn.datasets import load_iris
     iris = load_iris()
-    scoreModel = None
+    y = iris.target
+    X = iris.data
+    from sklearn.tree import DecisionTreeClassifier
+    dt = DecisionTreeClassifier(random_state=0)
+    dt.fit(X,y)
+    scoreModel = dt.score(X,y)
     # YOUR CODE HERE
 
     return scoreModel
